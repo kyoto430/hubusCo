@@ -33,3 +33,64 @@ function burger() {
 
 burger();
 
+let cards = document.querySelectorAll('.calc__card');
+let progressBarText = document.querySelector('.calc__progress span');
+let progressBarValue = document.querySelector('.progress');
+let calcBtn = document.querySelector('.calc__btn');
+
+let numberQuestion = 0;
+
+function switchText(number) {
+  if (number === 3) {
+    calcBtn.style.transform = 'scale(1)';
+  } else {
+    calcBtn.style.transform = 'scale(0)';
+  }
+
+  switch (number) {
+    case 0:
+      progressBarText.innerText = 'Сделайте выбор!';
+      progressBarValue.style.width = 0 + 'px';
+      break;
+    case 1:
+      progressBarText.innerText = 'Шаг 1 из 3';
+      progressBarValue.style.width = 124 + 'px';
+      break;
+    case 2:
+      progressBarText.innerText = 'Шаг 2 из 3';
+      progressBarValue.style.width = '50%';
+      break;
+    case 3:
+      progressBarText.innerText = 'Шаг 3 из 3';
+      progressBarValue.style.width = '100%';
+      break;
+    default:
+      break;
+  }
+}
+
+cards.forEach((card) => {
+  let iconCheck = card.querySelector('.calc__icon');
+  let imgCard = card.querySelector('.calc__img');
+  if (iconCheck.classList.contains('checked')) {
+    iconCheck.src = './assets/images/calculator/check-01.svg';
+  }
+  card.addEventListener('click', function () {
+    if (imgCard.classList.contains('selected')) {
+      imgCard.classList.remove('selected');
+    } else {
+      imgCard.classList.add('selected');
+    }
+    if (!iconCheck.classList.contains('checked')) {
+      iconCheck.classList.add('checked');
+      iconCheck.src = './assets/images/calculator/check-01.svg';
+      numberQuestion += 1;
+      switchText(numberQuestion);
+    } else {
+      iconCheck.classList.remove('checked');
+      iconCheck.src = './assets/images/calculator/check-02.svg';
+      numberQuestion -= 1;
+      switchText(numberQuestion);
+    }
+  });
+});

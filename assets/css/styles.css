@@ -93,6 +93,12 @@ img {
   text-align: center;
 }
 
+@media (max-width: 490px) {
+  .btn {
+    padding: 15px 10px;
+  }
+}
+
 @media (max-width: 320px) {
   .btn span {
     font-size: 16px !important;
@@ -474,9 +480,10 @@ img {
 }
 
 .team__card-img {
-  max-width: 200px;
+  width: 200px;
   height: 200px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .team__wrapper-title {
@@ -484,6 +491,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 5px;
 }
 
@@ -508,6 +516,25 @@ img {
 @media (max-width: 490px) {
   .team__wrapper {
     gap: 25px;
+  }
+
+  .team__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .team__card-title {
+    font-size: 18px;
+  }
+
+  .team__card-subtitle {
+    font-size: 12px;
+  }
+
+  .team__card-img {
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -784,7 +811,6 @@ img {
 .calc__inner {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   gap: 20px;
 }
 
@@ -829,7 +855,7 @@ img {
 .progress {
   position: absolute;
   left: 0;
-  width: 124px;
+  width: 0px;
   height: 50px;
   border-radius: 15px;
   background: linear-gradient(
@@ -851,14 +877,16 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.calc__card:nth-child(1) .calc__img {
-  border: 2px solid #7040f2;
+  cursor: pointer;
 }
 
 .calc__img {
   border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.selected {
+  border: 2px solid #7040f2;
 }
 
 .calc__icon {
@@ -931,6 +959,7 @@ img {
 }
 
 .calc__btn {
+  transform: scale(0);
   height: 66px;
   border-radius: 25px;
   background: linear-gradient(88deg, #7040f2 0.45%, #906cf0 103.24%);
@@ -1455,6 +1484,10 @@ img {
 
   .projects__card:nth-child(3) {
     padding: 25px 0px;
+  }
+
+  .projects__card-img {
+    max-height: 300px;
   }
 }
 
