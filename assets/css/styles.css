@@ -521,7 +521,7 @@ img {
   .team__cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 30px;
   }
 
   .team__card-title {
@@ -912,7 +912,7 @@ img {
 }
 
 .calc__right-inner {
-  padding: 31px 47px 58px 47px;
+  padding: 30px 47px 50px 47px;
   border-radius: 20px;
   border: 1px solid #7040f2;
   background: rgba(0, 0, 0, 0.55);
