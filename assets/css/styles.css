@@ -1187,18 +1187,7 @@ img {
   display: flex;
   align-items: center;
   gap: 22px;
-}
-
-.help__item:nth-child(1) img {
-  border: 1px solid #7040f2;
-}
-
-.help__item:nth-child(1) span {
-  color: #7040f2;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  font-weight: 100;
-  line-height: 101.5%;
+  cursor: pointer;
 }
 
 .help__item-img {
@@ -1213,6 +1202,18 @@ img {
   font-size: 20px;
   font-weight: 500;
   line-height: 106.5%;
+}
+
+.help__item-img.active {
+  border: 1px solid #7040f2;
+}
+
+.help__item-text.active {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 101.5%;
 }
 
 @media (max-width: 1239px) {
